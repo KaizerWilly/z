@@ -56,17 +56,8 @@
 
 			
 
-			let first = $gel("txtFirst").value;
-			let last = $gel("txtLast").value;
-			let address = $gel("txtAddress").value;
-			let city = $gel("txtCity").value;
-			let postal = $gel("txtPostal").value;
-			let phone = $gel("txtPhone").value;
-			let province = $gel("selProvinces").value;
-			let member = $gel("chkMember").checked;
 
 			const dataMap = new Map();			
-			
 			const dataSet = new Set();	
 
 				
@@ -79,14 +70,26 @@
 				testEmpty("txtPostal");
 				testEmpty("txtPhone");
 				
-			    first = $gel("txtFirst").value;
-			    last = $gel("txtLast").value;
-			    address = $gel("txtAddress").value;
-			    city = $gel("txtCity").value;
-			    postal = $gel("txtPostal").value;
-			    phone = $gel("txtPhone").value;
-			    province = $gel("selProvinces").value;
-			    member = $gel("chkMember").checked;
+				let first = $gel("txtFirst").value;
+		    	let last = $gel("txtLast").value;
+	    		let address = $gel("txtAddress").value;
+	    		let city = $gel("txtCity").value;
+	     		let postal = $gel("txtPostal").value;
+	    		let phone = $gel("txtPhone").value;
+	    		let province = $gel("selProvinces").value;
+	    		let member = $gel("chkMember").checked;
+
+
+
+                
+
+				dumpSet();
+				dumpMap();
+
+	
+			}
+
+			function dumpSet(dataSet) {
 
 				dataSet.add($gel("txtFirst").value);
 			    dataSet.add($gel("txtLast").value);
@@ -97,25 +100,7 @@
 				dataSet.add($gel("selProvinces").value);
 				dataSet.add($gel("chkMember").value);
 
-				dataMap.set(txtFirst, first);
-				dataMap.set(txtLast, last);
-				dataMap.set(txtAddress, address);
-				dataMap.set(txtCity, city);
-				dataMap.set(txtPostal, postal);
-				dataMap.set(txtPhone, phone);
-				dataMap.set(selProvinces, province);
-				dataMap.set(chkMember, member);
-		
-
-				dumpSet();
-				dumpMap();
-			}
-
-			function dumpSet(dataSet) {
-
-
-
-	    		dataMap.forEach(function(value) {
+	    		dataSet.forEach(function(value) {
 
 		        	console.log(value);
 
@@ -125,8 +110,15 @@
 
 			function dumpMap(dataMap) {
 
-
-			}
+				dataMap.set(txtFirst, first);
+				dataMap.set(txtLast, last);
+				dataMap.set(txtAddress, address);
+				dataMap.set(txtCity, city);
+				dataMap.set(txtPostal, postal);
+				dataMap.set(txtPhone, phone);
+				dataMap.set(selProvinces, province);
+				dataMap.set(chkMember, member);
+			
 
 			 	for (var [key, value] of dataMap) {
 
