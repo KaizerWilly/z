@@ -46,10 +46,6 @@
 
 
 
-			const dataSet = new Set();	
-            const dataMap = new Map();	
-
-
 
 
 			function testMemberProvince() {
@@ -82,6 +78,28 @@
 				testEmpty("txtPostal");
 				testEmpty("txtPhone");
 
+				//create a “set” (collection) object called “dataSet”
+                let dataSet = new Set();
+                dataSet.add($gel("txtFirst").value);
+                dataSet.add($gel("txtLast").value);
+                dataSet.add($gel("txtAddress").value);
+                dataSet.add($gel("txtCity").value);
+                dataSet.add($gel("txtPostal").value);
+                dataSet.add($gel("txtPhone").value);
+                dataSet.add($gel("selProvinces").value);
+                dataSet.add($gel("chkMember").checked);
+
+                //create a map object called “dataMap”
+                let dataMap = new Map();
+                dataMap.set("txtFirst", $gel("txtFirst").value);
+                dataMap.set("txtLast", $gel("txtLast").value);
+                dataMap.set("txtAddress", $gel("txtAddress").value);
+                dataMap.set("txtCity", $gel("txtCity").value);
+                dataMap.set("txtPostal", $gel("txtPostal").value);
+                dataMap.set("txtPhone", $gel("txtPhone").value);
+                dataMap.set("selProvinces", $gel("selProvinces").value);
+                dataMap.set("chkMember", $gel("chkMember").checked);
+
 
 		
 
@@ -93,16 +111,6 @@
 			function dumpSet(dataSet) {
 
 
-
-				dataSet.add($gel("txtFirst").value);
-			    dataSet.add($gel("txtLast").value);
-				dataSet.add($gel("txtAddress").value);
-				dataSet.add($gel("txtCity").value);
-				dataSet.add($gel("txtPostal").value);
-				dataSet.add($gel("txtPhone").value);
-				dataSet.add($gel("selProvinces").value);
-				dataSet.add($gel("chkMember").value);
-
 	    		dataSet.forEach(function(value) {
 
 		        	console.log(value);
@@ -112,16 +120,6 @@
 			}
 
 			function dumpMap(dataMap) {
-
-				dataMap.set("txtFirst", document.getElementById("txtFirst").value);
-				dataMap.set("txtLast", document.getElementById("txtLast").value);
-				dataMap.set("txtAddress", document.getElementById("txtAddress").value);
-				dataMap.set("txtCity", document.getElementById("txtCity").value);
-	         	dataMap.set("txtPostal", document.getElementById("txtPostal").value);
-				dataMap.set("txtPhone", document.getElementById("txtPhone").value);
-				dataMap.set("selProvinces", document.getElementById("selProvinces").value);
-				dataMap.set("chkMember", document.getElementById("chkMember").value);
-			
 
 			 	for (var [key, value] of dataMap) {
 
